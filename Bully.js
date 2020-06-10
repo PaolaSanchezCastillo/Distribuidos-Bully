@@ -5,6 +5,8 @@ const readline = require('readline-sync');
 var n = 0;
 var procesos = new Array;
 var maxPpg;
+var nodos;
+
 
 // Estado de los procesos 
 // STBY -- Estado en espera
@@ -16,7 +18,7 @@ bully();
 
 function bully() {
     console.log('Algoritmo Bully');
-    let nodos = readline.question('Escribe la cantidad de nodos ');
+    nodos = readline.question('Escribe la cantidad de nodos ');
 
     console.log('Número de nodos elegido : ' + nodos);
 
@@ -53,6 +55,10 @@ function bully() {
         console.log('No hay fallas')
     }
 
+    console.log();
+
+    convocaEleccion(nodos);
+
 
 
 }
@@ -77,5 +83,22 @@ function mataProceso(maxPpg) {
     console.info(' ha fallado.\n\n');
     console.log('Nueva distribución de procesos');
     console.table(procesos);
+
+
+}
+
+function convocaEleccion(nodos) {
+
+    console.log('Se convoca a una nueva eleccion\n\n');
+    console.log('Cantidad de nodos ' + nodos);
+    var maximo = parseInt(nodos);
+    var eleccion = random.int(min = 0, max = maximo);
+    if (procesos[eleccion].tipo === 'DOWN') {
+        convocaEleccion();
+    } else {
+        procesos[eleccion].tipo = "UP";
+        console.table(procesos);
+    }
+
 
 }
