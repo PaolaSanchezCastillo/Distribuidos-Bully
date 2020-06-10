@@ -1,0 +1,24 @@
+{
+  "name": "Distribuidos-Bully",
+  "version": "1.0.0",
+  "description": "Implementación del algoritmo bully",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaolaSanchezCastillo/Distribuidos-Bully.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaolaSanchezCastillo/Distribuidos-Bully/issues"
+  },
+  "homepage": "https://github.com/PaolaSanchezCastillo/Distribuidos-Bully#readme",
+  "dependencies": {
+    "random": "^2.2.0",
+    "readline-sync": "^1.4.10"
+  }
+}
