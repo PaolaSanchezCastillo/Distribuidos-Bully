@@ -5,8 +5,13 @@ const readline = require('readline-sync');
 var n = 0;
 var procesos = new Array;
 var maxPpg;
+<<<<<<< HEAD
 var ran;
 var auxiliar = new Array;
+=======
+var nodos;
+
+>>>>>>> 5e2efd0410a223a785e9679696a6ded5af3ca29c
 
 // Estado de los procesos 
 // STBY -- Estado en espera
@@ -18,7 +23,7 @@ bully();
 
 function bully() {
     console.log('Algoritmo Bully');
-    let nodos = readline.question('Escribe la cantidad de nodos ');
+    nodos = readline.question('Escribe la cantidad de nodos ');
 
     console.log('Número de nodos elegido : ' + nodos);
 
@@ -66,6 +71,7 @@ function bully() {
         console.log('No hay fallas')
     }
 
+<<<<<<< HEAD
     convocaElleccion(parseInt(nodos));
     enviaMensajes(procesos, ran);
 
@@ -73,6 +79,11 @@ function bully() {
 
 
 
+=======
+    console.log();
+
+    convocaEleccion(nodos);
+>>>>>>> 5e2efd0410a223a785e9679696a6ded5af3ca29c
 
 
 
@@ -154,6 +165,7 @@ function enviaMensajes() {
     console.table(procesos);
 
 
+<<<<<<< HEAD
 
 
 
@@ -188,4 +200,22 @@ function sortByProperty(valor) {
 
         return 0;
     }
+=======
+}
+
+function convocaEleccion(nodos) {
+
+    console.log('Se convoca a una nueva eleccion\n\n');
+    console.log('Cantidad de nodos ' + nodos);
+    var maximo = parseInt(nodos);
+    var eleccion = random.int(min = 0, max = maximo);
+    if (procesos[eleccion].tipo === 'DOWN') {
+        convocaEleccion();
+    } else {
+        procesos[eleccion].tipo = "UP";
+        console.table(procesos);
+    }
+
+
+>>>>>>> 5e2efd0410a223a785e9679696a6ded5af3ca29c
 }
